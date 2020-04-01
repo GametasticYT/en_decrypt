@@ -4,13 +4,13 @@ bufferSize = 64 * 1024
 
 
 def encrypt():
-    inputFile = str(input("Bitte Pfad der datei eingeben oder (wenn im selben ordner) dateinamen angeben: "))
+    inputFile = str(input("Bitte Pfad der datei eingeben: "))
     password = str(input("Bitte Gewünschtes Passwort eingeben: "))
     pyAesCrypt.encryptFile(inputFile, inputFile+".aes", password, bufferSize)
     os.remove(inputFile)
 
 def decrypt():
-    inputFile = str(input("Bitte Pfad der verschlüsselten Datei oder (wenn im selben ordner) dateinamen angeben: "))
+    inputFile = str(input("Bitte Pfad der verschlüsselten Datei angeben: "))
     if inputFile.endswith('.aes'):
         outPutfile = inputFile[:-4]
         password = str(input("Passwort: "))
